@@ -85,7 +85,7 @@ class PasskitPass extends Equatable {
 
   /// Optional. Maximum distance in meters from a relevant latitude and longitude that the pass is relevant.
   /// This number is compared to the pass’s default distance and the smaller value is used.
-  final int? maxDistance;
+  final String? maxDistance;
 
   /// Recommended for event tickets and boarding passes; otherwise optional.
   /// Date and time when the pass becomes relevant. For example, the start time of a movie.
@@ -174,7 +174,7 @@ class PasskitPass extends Equatable {
       voided: json['voided'] as bool?,
       sharingProhibited: json['sharingProhibited'] as bool?,
       relevantDate: json['relevantDate'],
-      maxDistance: json['maxDistance'] as int?,
+      maxDistance: json['maxDistance'] as String?,
       locations: (json['locations'] as List<dynamic>?)
           ?.map((e) => PasskitLocation.fromJson(e as Map<String, dynamic>))
           .toList(),
